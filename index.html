@@ -14,6 +14,7 @@
         <div class="logo-icon"><i class="fa-solid fa-square-parking"></i></div>
         <span>ParkirKu</span>
       </a>
+
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="active">Beranda</a>
         <a href="pages/fitur.html">Fitur</a>
@@ -21,8 +22,12 @@
         <a href="pages/statistik.html">Statistik</a>
         <a href="pages/kontak.html">Kontak</a>
       </nav>
-      <a href="pages/login.html" class="btn-login">Masuk Sistem</a>
-      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+
+      <a href="app/auth/login.php" class="btn-login">Masuk Sistem</a>
+
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </header>
 
@@ -30,29 +35,56 @@
     <section class="hero">
       <div class="container hero-wrapper">
         <div class="hero-content reveal">
-          <div class="badge"><i class="fa-solid fa-shield-halved"></i> Sistem Parkir Kampus Tanpa Biaya</div>
-          <h1>Kelola Parkir Kampus Lebih <span>Rapi, Cepat, dan Digital</span></h1>
+          <div class="badge">
+            <i class="fa-solid fa-shield-halved"></i>
+            Sistem Parkir Kampus Tanpa Biaya
+          </div>
+
+          <h1>
+            Kelola Parkir Kampus Lebih
+            <span>Rapi, Cepat, dan Digital</span>
+          </h1>
+
           <p>
             ParkirKu membantu kampus mencatat kendaraan masuk dan keluar, memantau slot parkir,
             serta menampilkan laporan aktivitas parkir secara mudah tanpa proses manual yang rumit.
           </p>
+
           <div class="hero-buttons">
-            <a href="pages/fitur.html" class="btn-primary">Lihat Fitur <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="pages/alur.html" class="btn-secondary">Lihat Alur Sistem</a>
+            <a href="pages/fitur.html" class="btn-primary">
+              Lihat Fitur <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="pages/alur.html" class="btn-secondary">
+              Lihat Alur Sistem
+            </a>
           </div>
+
           <div class="hero-info">
-            <div><strong>100+</strong><span>Slot Parkir</span></div>
-            <div><strong>4</strong><span>Area Kampus</span></div>
-            <div><strong>Real-time</strong><span>Monitoring</span></div>
+            <div>
+              <strong>100+</strong>
+              <span>Slot Parkir</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>Area Kampus</span>
+            </div>
+            <div>
+              <strong>Real-time</strong>
+              <span>Monitoring</span>
+            </div>
           </div>
         </div>
 
         <div class="hero-image reveal delay-1">
           <div class="dashboard-card">
             <div class="card-header">
-              <div><h3>Dashboard Parkir</h3><p>Status slot hari ini</p></div>
+              <div>
+                <h3>Dashboard Parkir</h3>
+                <p>Status slot hari ini</p>
+              </div>
               <div class="status-dot"></div>
             </div>
+
             <div class="parking-map">
               <div class="slot filled">A-01</div>
               <div class="slot empty">A-02</div>
@@ -63,18 +95,33 @@
               <div class="slot empty">B-03</div>
               <div class="slot filled">B-04</div>
             </div>
+
             <div class="card-stats">
-              <div><span class="number">45</span><span>Slot Kosong</span></div>
-              <div><span class="number">55</span><span>Slot Terisi</span></div>
+              <div>
+                <span class="number">45</span>
+                <span>Slot Kosong</span>
+              </div>
+              <div>
+                <span class="number">55</span>
+                <span>Slot Terisi</span>
+              </div>
             </div>
           </div>
+
           <div class="floating-card card-one">
             <i class="fa-solid fa-car-side"></i>
-            <div><strong>B 1234 ABC</strong><span>Masuk - Slot A-01</span></div>
+            <div>
+              <strong>B 1234 ABC</strong>
+              <span>Masuk - Slot A-01</span>
+            </div>
           </div>
+
           <div class="floating-card card-two">
             <i class="fa-solid fa-circle-check"></i>
-            <div><strong>Slot tersedia</strong><span>45 slot kosong</span></div>
+            <div>
+              <strong>Slot tersedia</strong>
+              <span>45 slot kosong</span>
+            </div>
           </div>
         </div>
       </div>
@@ -82,9 +129,23 @@
 
     <section class="quick-section">
       <div class="container quick-grid">
-        <div class="quick-card reveal"><i class="fa-solid fa-car"></i><h3>Catat Kendaraan</h3><p>Nomor plat, jenis kendaraan, pemilik, dan kategori pengguna.</p></div>
-        <div class="quick-card reveal delay-1"><i class="fa-solid fa-square-parking"></i><h3>Pantau Slot</h3><p>Melihat slot kosong, terisi, rusak, dan tidak aktif.</p></div>
-        <div class="quick-card reveal delay-2"><i class="fa-solid fa-clock-rotate-left"></i><h3>Riwayat Aktivitas</h3><p>Log kendaraan masuk, keluar, dan perubahan status slot.</p></div>
+        <div class="quick-card reveal">
+          <i class="fa-solid fa-car"></i>
+          <h3>Catat Kendaraan</h3>
+          <p>Nomor plat, jenis kendaraan, pemilik, dan kategori pengguna.</p>
+        </div>
+
+        <div class="quick-card reveal delay-1">
+          <i class="fa-solid fa-square-parking"></i>
+          <h3>Pantau Slot</h3>
+          <p>Melihat slot kosong, terisi, rusak, dan tidak aktif.</p>
+        </div>
+
+        <div class="quick-card reveal delay-2">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h3>Riwayat Aktivitas</h3>
+          <p>Log kendaraan masuk, keluar, dan perubahan status slot.</p>
+        </div>
       </div>
     </section>
 
@@ -93,9 +154,15 @@
         <div>
           <span>Sistem Parkir Kampus</span>
           <h2>Bangun pengelolaan parkir kampus yang lebih tertata</h2>
-          <p>Landing page ini siap dikembangkan ke halaman login, dashboard, kendaraan masuk, kendaraan keluar, dan laporan.</p>
+          <p>
+            Landing page ini siap dikembangkan ke halaman login, dashboard,
+            kendaraan masuk, kendaraan keluar, dan laporan.
+          </p>
         </div>
-        <a href="pages/login.html" class="btn-primary light-btn">Masuk ke Sistem</a>
+
+        <a href="app/auth/login.php" class="btn-primary light-btn">
+          Masuk ke Sistem
+        </a>
       </div>
     </section>
   </main>
@@ -103,15 +170,29 @@
   <footer class="footer">
     <div class="container footer-wrapper">
       <div>
-        <a href="index.html" class="logo footer-logo"><div class="logo-icon"><i class="fa-solid fa-square-parking"></i></div><span>ParkirKu</span></a>
+        <a href="index.html" class="logo footer-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-square-parking"></i>
+          </div>
+          <span>ParkirKu</span>
+        </a>
         <p>Sistem Pengelolaan Parkir Digital Kampus Tanpa Biaya Parkir.</p>
       </div>
+
       <div class="footer-links">
-        <a href="index.html">Beranda</a><a href="pages/fitur.html">Fitur</a><a href="pages/alur.html">Alur</a><a href="pages/statistik.html">Statistik</a><a href="pages/kontak.html">Kontak</a>
+        <a href="index.html">Beranda</a>
+        <a href="pages/fitur.html">Fitur</a>
+        <a href="pages/alur.html">Alur</a>
+        <a href="pages/statistik.html">Statistik</a>
+        <a href="pages/kontak.html">Kontak</a>
       </div>
     </div>
-    <div class="copyright"><p>© 2026 ParkirKu. Sistem Parkir Digital Kampus.</p></div>
+
+    <div class="copyright">
+      <p>© 2026 ParkirKu. Sistem Parkir Digital Kampus.</p>
+    </div>
   </footer>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
