@@ -13,18 +13,23 @@ if (isset($_POST['simpan'])) {
     $kode_slot = mysqli_real_escape_string($koneksi, $_POST['kode_slot']);
     $status_slot = $_POST['status_slot'];
 
-    $simpan = mysqli_query($koneksi, "
-        INSERT INTO slot_parkir (id_area, kode_slot, status_slot)
-        VALUES ('$id_area', '$kode_slot', '$status_slot')
-    ");
+    try {
+        $simpan = mysqli_query($koneksi, "
+            INSERT INTO slot_parkir (id_area, kode_slot, status_slot)
+            VALUES ('$id_area', '$kode_slot', '$status_slot')
+        ");
 
-if ($update) {
-    $pesan = "Data slot berhasil diupdate.";
-    $tipe_pesan = "success";
-} else {
-    $pesan = "Gagal mengupdate slot. Kode slot kemungkinan sudah digunakan slot lain.";
-    $tipe_pesan = "error";
-}
+        if ($simpan) {
+            $pesan = "Data slot berhasil disimpan.";
+            $tipe_pesan = "success";
+        } else {
+            $pesan = "Gagal menyimpan slot. Kode slot kemungkinan sudah digunakan slot lain.";
+            $tipe_pesan = "error";
+        }
+    } catch (mysqli_sql_exception $e) {
+        $pesan = "Gagal menyimpan slot. Kode slot kemungkinan sudah digunakan slot lain.";
+        $tipe_pesan = "error";
+    }
 }
 
 if (isset($_POST['update'])) {
@@ -33,20 +38,26 @@ if (isset($_POST['update'])) {
     $kode_slot = mysqli_real_escape_string($koneksi, $_POST['kode_slot']);
     $status_slot = $_POST['status_slot'];
 
-$update = mysqli_query($koneksi, "
-    UPDATE slot_parkir
-    SET 
-        id_area = '$id_area',
-        kode_slot = '$kode_slot',
-        status_slot = '$status_slot'
-    WHERE id_slot = '$id_slot'
-");
+    try {
+        $update = mysqli_query($koneksi, "
+            UPDATE slot_parkir
+            SET 
+                id_area = '$id_area',
+                kode_slot = '$kode_slot',
+                status_slot = '$status_slot'
+            WHERE id_slot = '$id_slot'
+        ");
 
-    if ($update) {
-        header("Location: slot-parkir.php");
-        exit;
-    } else {
+        if ($update) {
+            header("Location: slot-parkir.php");
+            exit;
+        } else {
+            $pesan = "Gagal mengupdate slot. Kode slot kemungkinan sudah digunakan slot lain.";
+            $tipe_pesan = "error";
+        }
+    } catch (mysqli_sql_exception $e) {
         $pesan = "Gagal mengupdate slot. Kode slot kemungkinan sudah digunakan slot lain.";
+        $tipe_pesan = "error";
     }
 }
 

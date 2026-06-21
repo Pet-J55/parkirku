@@ -12,20 +12,25 @@ if (isset($_POST['proses_keluar'])) {
     $id_transaksi = $_POST['id_transaksi'];
     $id_user = $_SESSION['id_user'];
 
-    $query = mysqli_query($koneksi, "
-        CALL sp_kendaraan_keluar('$id_transaksi', '$id_user')
-    ");
+    try {
+        $query = mysqli_query($koneksi, "
+            CALL sp_kendaraan_keluar('$id_transaksi', '$id_user')
+        ");
 
-    if ($query) {
-        $pesan = "Kendaraan berhasil keluar. Transaksi selesai dan slot kembali Kosong.";
-        $tipe_pesan = "success";
-    } else {
-        $pesan = "Gagal memproses kendaraan keluar: " . mysqli_error($koneksi);
+        if ($query) {
+            $pesan = "Kendaraan berhasil keluar. Transaksi selesai dan slot kembali Kosong.";
+            $tipe_pesan = "success";
+        } else {
+            $pesan = "Gagal memproses kendaraan keluar: " . mysqli_error($koneksi);
+            $tipe_pesan = "error";
+        }
+
+        while (mysqli_more_results($koneksi) && mysqli_next_result($koneksi)) {
+            mysqli_store_result($koneksi);
+        }
+    } catch (mysqli_sql_exception $e) {
+        $pesan = "Gagal memproses kendaraan keluar: " . $e->getMessage();
         $tipe_pesan = "error";
-    }
-
-    while (mysqli_more_results($koneksi) && mysqli_next_result($koneksi)) {
-        mysqli_store_result($koneksi);
     }
 }
 
